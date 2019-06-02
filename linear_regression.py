@@ -16,7 +16,7 @@ Y = data.values[:,1]
 def model_predict(number,weight,bias):
 	return weight*number + bias
 ## loss_function is MSE (measures squared error), compute average of MSE to to increase accuracy
-## Recipe MSE : 
+## Recipe MSE in README.md
 def loss_function(X,Y, weight, bias):
 	n = len(X)
 	sum_loss = 0
@@ -44,7 +44,9 @@ def trainning (X, Y, weight, bias, learning_rate, iter):
 		error = loss_function(X, Y, weight, bias)
 		loss_history.append(error)
 	return weight, bias
-weight, bias = trainning (X, Y, 0.00001, 0.00001, 0.001, 10000)
+weight = 0.00001
+bias   = 0.00001   
+weight, bias = trainning (X, Y, weight, bias, 0.001, 10000)
 ## You can change variable 'number_want_to_predict' to know which number it will predict 
 number_want_to_predict = 32
 print('Predict: ', model_predict(number_want_to_predict, weight, bias))
